@@ -1,0 +1,11 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">EDM</a>
+  </div>
+</nav>
+
+<div class="container">
+  <a (click)="showAdd = !showAdd">Add</a>
+  <app-add-listing-form *ngIf='showAdd'></app-add-listing-form>
+  <app-entity-listing></app-entity-listing>
+</div>

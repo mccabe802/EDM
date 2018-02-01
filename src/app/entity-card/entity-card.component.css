@@ -1,0 +1,12 @@
+.thumbnail {
+  min-height: 380px;
+}
+
+.label {
+  display: inline-block;
+}
+.tn-img {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+}

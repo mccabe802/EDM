@@ -1,0 +1,58 @@
+<div class="thumbnail" >
+    <img class="tn-img" src="assets/images/{{ entity.image }}.jpg" alt="entity thumbnail">
+
+  <div class="caption">
+    <div *ngIf="!entity.showDetails">
+      <h4>
+        <span class="label label-primary">
+          <!--{{ entity.type }}-->
+        </span>
+      </h4>
+      <h3>
+        <i class="glyphicon glyphicon-name"></i> 
+          {{ entity.price | currency:'USD':true }}
+      </h3>
+      <h4>
+        <i class="glyphicon glyphicon-school"></i> 
+          {{ entity.address }}
+      </h4>
+
+      <hr>
+
+      <button 
+        class="btn btn-sm btn-success"
+        *ngIf="!entity.showDetails"
+        (click)="entity.showDetails = !entity.showDetails">
+        Details
+      </button>
+
+    </div>
+
+    <div *ngIf="entity.showDetails">
+      <div class="details">
+        <h4>
+          <span class="label label-primary">
+            Beds: {{ entity.bedrooms }}
+          </span>
+          <span class="label label-primary">
+            Baths: {{ entity.bathrooms }}
+          </span>
+          <span class="label label-primary">
+            SqFt: {{ entity.area }}
+          </span>
+        </h4>
+
+        <p>{{ entity.description }}</p>
+
+        <hr>
+
+        <button
+          class="btn btn-sm btn-danger"
+          (click)="entity.showDetails = !entity.showDetails">
+          Close
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>
